@@ -1,0 +1,596 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* NavBar */
+header {
+    background-color: white;
+    height: 9vh;
+	width: 100%;
+	position: fixed;
+	border-top: 20px 20px;
+	box-shadow: 5px 5px 60px 5px #16787d;
+	z-index: 3;
+}
+
+.logo {
+	margin-left: 8vh;
+	margin-top: 3px;
+    height: 8vh;
+	width: 8vh;
+}
+
+.smartwasher {
+	float: left;
+	color: #16787d;
+	margin-top: 1.8vh;
+	margin-left: 1vh;
+	font-size: 4.8vh;
+	font-family: 'Lemon', cursive;
+}
+
+
+nav {
+    display: flex;
+    min-height: 8vh;
+}
+
+.main-nav {
+    display: flex;
+	margin-left: 20%;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.main-nav li {
+	margin-top: 2vh;
+    list-style: none;
+	display: flex;
+	font-size: 20px;
+}
+.main-nav li:last-child {
+	margin-top: 0vh;
+    list-style: none;
+	display: flex;
+	font-size: 20px;
+}
+.main-nav li button {
+    background-color: #16787d;
+	color: white;
+	height: 5vh;
+	font-size: 25px;
+	display: inline-block;
+    margin-top: 1.6vh;
+    font-family: 'Baloo Chettan', cursive;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px 40px 12px;
+    line-height: 1.42857143;
+    border-radius: 30px;
+}
+.main-nav li:hover {
+	margin-top: 1.7vh;
+    list-style: none;
+	display: flex;
+	text-shadow: 20px 20px 20px 20px #77d3d8;
+	transition: all 1s ease;
+}
+.main-nav li:last-child:hover {
+	margin-top: -0.0vh;
+    list-style: none;
+	display: flex;
+	transition: all 1s ease;
+}
+.main-nav a {
+    color: #16787d;
+    text-decoration: none;
+	font-size: 25px;
+	font-family: 'Baloo Chettan', cursive;
+}
+.main-nav li:last-child button:hover {
+    background-color: #16787d;
+	color: white;
+	height: 7vh;
+	font-size: 30px;
+	display: inline-block;
+    margin-top: 1vh;
+    font-family: 'Baloo Chettan', cursive;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px 40px 12px;
+    line-height: 1.42857143;
+    border-radius: 30px;
+	transition: all 0.5s ease;
+}
+
+.burger {
+	display: none;
+	margin-right: 3vw;
+} 
+
+.burger div {
+    width: 40px;
+    height: 6px;
+    background-color: #16787d;
+    margin: 8px;
+	transition: all 0.7s ease;
+}
+
+@media screen and (max-width:1024px) {
+	.logo {
+		margin-left: 17vw;
+		height: 5vh;
+		width: 5vh;
+	}
+	header {
+		height: 5.5vh;
+	}
+	.smartwasher {
+		float: left;
+		color: #16787d;
+		margin-top: 1vh;
+		margin-left: 1vh;
+		font-size: 3vh;
+	}
+    .main-nav {
+        width: 30%;
+		right: 0;
+        position: fixed;
+        height: 30%;
+        top: 5.5vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+		justify-content: center;
+		border-bottom-left-radius: 30px;
+    }
+	.main-nav li {
+		margin-top: 2vh;
+		opacity: 0;
+		display: block;
+	}
+	
+	.main-nav li:hover {
+		margin-top: 2vh;
+		margin-right: 4vh;
+    	list-style: none;
+		display: flex;
+		text-shadow: 20px 20px 20px 20px #77d3d8;
+		transition: all 1s ease;
+	}
+	.main-nav li:last-child:hover {
+		margin-top: 0vh;
+		margin-right: 0vh;
+    	list-style: none;
+		display: flex;
+		text-shadow: 20px 20px 20px 20px #77d3d8;
+		transition: all 1s ease;
+	}
+    .burger {
+		position: absolute;
+		float: right;
+		margin-top: 1vh;
+		padding-left: 92%;
+        display: block;
+    }
+    .main-nav li button {
+        height: 3vh;
+    }
+    .main-nav li:last-child button:hover {
+        height: 3vh;
+    }
+}
+
+.nav-active {
+	transform: translateX(0%);
+	box-shadow: 0px 30px 40px 0px #16787d;
+}
+
+@keyframes mainNavFade {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-17px,12px);
+}
+.toggle .line2 {
+	opacity: 0;
+}
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px,-5px);
+}
+
+/* LANDING HOME */
+.home {
+	position: relative;
+	display: flex;
+	z-index: 0;
+}
+
+.dirty-background {
+	height: 100vh;
+	width: 70vw;
+	background-image: url(dirty-background.png);
+	background-position: top;
+	background-size: 80vw;
+	background-repeat: repeat-y;
+}
+.overlay-cyan {
+	height: 99.6vh;
+	width: 70vw;
+	background: rgb(99, 202, 208, 0.8);
+	text-align: center;
+	position: relative;
+	z-index: 0;
+}
+.text-smartwasher {
+	font-family: 'Lemon', cursive;
+	font-display: bolder;
+	font-size: 92px;	
+	line-height: 70px;
+	color: #16787d;
+	padding-top: 27vh;
+}
+
+.text-title {
+	font-family: 'Baloo Chettan', cursive;
+	font-weight: bolder;
+	font-size: 35px;	
+	color: #16787d;
+	padding-top: 1vh;
+}
+
+.text-content {
+	text-align: left;
+	padding-top: 10vh;
+	padding-left: 6vw;
+	font-family: 'Baloo Chettan', cursive;
+	color: white;
+	font-size: 22px;
+}
+.btn-explore {
+	padding-left: 8vw;
+	padding-top: 20px;
+	position: relative;
+	text-align: left;
+    z-index: 1;
+}
+.btn-explore button {
+    background-color: #ffffff;
+	color: #16787d;
+	height: 6vh;
+	font-size: 35px;
+	display: inline-block;
+    font-family: 'Baloo Chettan', cursive;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 0px 20px 50px 20px;
+    line-height: 1.42857143;
+    border-radius: 60px;
+}
+
+.btn-explore button img { 
+	margin-right: 6px; 
+	margin-bottom: 3px; 
+	border-radius: 50%; 
+	width:30px;
+	height:30px;
+	object-fit:cover;
+}
+
+.product-photo {
+	position: relative;
+	z-index: 2;
+}
+
+.product-photo img {
+	position: relative;
+	top: 15%;
+	right: 30%;
+}
+
+@media screen and (max-width:1024px) {
+	.home {
+		height: 60vh;
+	}
+	.dirty-background {
+		height: 60vh;
+		width: 65vw;
+		background-image: url(dirty-background.png);
+		background-position: top;
+		background-size: 80vw;
+		background-repeat: repeat-y;
+	}
+	.overlay-cyan {
+		height: 60vh;
+		width: 65vw;
+		background: rgb(99, 202, 208, 0.8);
+		text-align: center;
+	}
+	.text-smartwasher {
+		font-size: 90px;	
+		color: #16787d;
+		padding-top: 30vh;
+		text-shadow: 30px 30px 30px 30px;
+	}
+	.text-title {
+		font-family: 'Baloo Chettan', cursive;
+		font-weight: bolder;
+		font-size: 40px;	
+		color: #16787d;
+		padding-top: 1vh;
+	}
+	
+	.text-content {
+		text-align: center;
+		padding-right: 6vw;
+		padding-top: 7vh;
+	}
+	
+	.text-content .hidden-text{
+		display: none;
+	}
+	
+	.btn-explore {
+		padding-left: 18vw;
+		padding-top: 30px;
+		text-align: left;
+	}
+	.btn-explore button {
+		background-color: #ffffff;
+		color: #16787d;
+		height: 4vh;
+		font-size: 25px;
+		display: inline-block;
+		font-family: 'Baloo Chettan', cursive;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		background-image: none;
+		border: 1px solid transparent;
+		padding: 6px 12px;
+		line-height: 1.42857143;
+		border-radius: 60px;
+		margin-right: 6px;
+	}
+}
+
+/* PRODUCT */
+.product {
+	position: relative;
+	display: flex;
+	z-index: 1;
+}
+
+.product-images-container {
+	position: relative;
+	z-index: 2;
+	height: 100vh;
+	width: 30%;
+}
+
+.product-images-container img {
+	position: relative;
+	top: 2%;
+	left: 20%;
+	height: 100%;
+}
+.product-features-container {
+	position: relative;
+	height: 100vh;
+	margin-left: 30%;
+	width: 70%;
+	background-image: linear-gradient(to bottom right,#52cad3, #2aa39d);
+}
+
+@media screen and (max-width:1024px) {
+	.product {
+		top: 60%;
+	}
+}
+
+/* CONTACT */
+.contact {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+.contact h3 {
+    font-family: 'Baloo Chettan', cursive;
+	font-weight: bolder;
+	font-size: 60px;	
+	color: #16787d;
+	padding-top: 10vh;
+    padding-left: 3vw;
+}
+
+.contact-display {
+    display: flex;
+    height: 78%;
+    width: 100%;
+}
+
+.hotline {
+    width: 30%;
+	height: 100%;
+    background: black;
+}
+
+.send-mail {
+    width: 70%;
+	height: 100%;
+}
+
+.send-mail button {
+    background-color: #16787d;
+	color: white;
+	height: 5vh;
+	font-size: 25px;
+	display: inline-block;
+    margin-top: 5vh;
+    margin-right: 8.5vw;
+    font-family: 'Baloo Chettan', cursive;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 30px 40px 30px;
+    line-height: 1.42857143;
+    border-radius: 30px;
+    float: right;
+}
+.send-mail button:hover {
+    background-color: #16787d;
+	color: white;
+	height: 5vh;
+	font-size: 25px;
+	display: inline-block;
+    margin-top: 5vh;
+    margin-right: 8vw;
+    font-family: 'Baloo Chettan', cursive;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 60px 40px 60px;
+    line-height: 1.42857143;
+    border-radius: 30px;
+	transition: all 0.5s ease;
+    float: right;
+}
+.info-container {
+    margin-left: 3vw;
+    margin-top: 3vh;
+}
+.info-container h4 {
+    color: #16787d;
+    text-decoration: none;
+	font-size: 25px;
+	font-family: 'Baloo Chettan', cursive;
+}
+.info-container input {
+    width: 80%;
+    height: 20%;
+    font-size: 20px;
+    font-family: 'Baloo Chettan', cursive;
+    color: gray;
+}
+@media screen and (max-width:1024px) {
+	.contact {
+		height: 70%;
+	}
+    .hotline {
+        display: none;
+    }
+    
+    .send-mail {
+        width: 100%;
+    }
+    .contact h3 {
+        font-family: 'Baloo Chettan', cursive;
+        font-weight: bolder;
+        font-size: 80px;	
+        color: #16787d;
+        padding-top: 6vh;
+        padding-left: 10vw;
+    }
+    .contact-display {
+        display: flex;
+        height: 90%;
+        width: 100%;
+    }
+    .send-mail button {
+		background-color: #16787d;
+		color: white;
+		height: 4vh;
+		font-size: 50px;
+		display: inline-block;
+		margin-top: 5vh;
+		margin-right: 8.5vw;
+		font-family: 'Baloo Chettan', cursive;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		cursor: pointer;
+		background-image: none;
+		border: 1px solid transparent;
+		padding: 6px 30px 80px 30px;
+		line-height: 1.42857143;
+		border-radius: 30px;
+		float: right;
+	}
+	.send-mail button:hover {
+		background-color: #16787d;
+		color: white;
+		height: 4vh;
+		font-size: 50px;
+		display: inline-block;
+		margin-top: 5vh;
+		margin-right: 8vw;
+		font-family: 'Baloo Chettan', cursive;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		background-image: none;
+		border: 1px solid transparent;
+		padding: 6px 60px 80px 60px;
+		line-height: 1.42857143;
+		border-radius: 30px;
+		transition: all 0.5s ease;
+		float: right;
+	}
+	.info-container {
+		margin-left: 3vw;
+		margin-top: 2vh;
+	}
+	.info-container h4 {
+		color: #16787d;
+		text-decoration: none;
+		font-size: 40px;
+		font-family: 'Baloo Chettan', cursive;
+	}
+	.info-container input {
+		width: 80%;
+		height: 20%;
+		font-size: 40px;
+		margin-left: 20px;
+		font-family: 'Baloo Chettan', cursive;
+		color: gray;
+	}
+}
+
+/* FOOTER */
+footer {
+	position: relative;
+	background-color: #171717;
+	width: 100%;
+	height: 30%;
+}
