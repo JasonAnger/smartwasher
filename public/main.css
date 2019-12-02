@@ -397,8 +397,8 @@ nav {
 
 .product-images-container img {
 	position: relative;
-	height: 580px;
-	width: 550px;
+	height: auto;
+	width: auto;
 	margin-top: 30%;
 	margin-left: 20%;
 	z-index: 5;
