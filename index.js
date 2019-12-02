@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const domain="http://smartwasher.tk"
 
@@ -16,8 +17,7 @@ app.get('/', function(req,res){
 })
 
 app.post('/contact', function(req,res){
-    //sendContact(req.body.name, req.body.email, req.body.phone, req.body.quantity, req.body.address)
-    console.log(req.body)
+    sendContact(req.body.name, req.body.email, req.body.phone, req.body.quantity, req.body.address)
     res.redirect('/')
 })
 
@@ -31,7 +31,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const sendContact = (name, email, phone, quantity, address) => {
     const msg = {
-        to: 'jayandn1999@gmail.com',
+        to: 'uyen11120@gmail.com',
         from: 'no-reply-Smart-Washer@smartwasher.tk',
         subject: `${name} - Booking - Phone: ${phone}`,
         html: `
